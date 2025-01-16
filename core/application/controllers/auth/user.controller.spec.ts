@@ -14,7 +14,7 @@ describe('Controler: Signup user', () => {
     it('should add & return user data', async () => {
         const userPromise = userController.signUp({
             name: 'test',
-            phone: '123456789',
+            phone: '1234567890',
             email: 'fds@fjdsl.com'
         })
         await expect(userPromise)
