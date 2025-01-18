@@ -11,7 +11,7 @@ The project is organized as follows:
     project-folder/
         ├── .github/ 
             └── workflows/ # GitHub Actions workflows for CI/CD 
-        ├── app/ # Application-specific components and pages 
+        ├── app/ # Next.js specifics
             ├── api/ # API routes (exposed only for external needs (Webhook, Auth, etc))
             ├── components/ # react components folders {PS: Check CDD & Atomic Design}
                 ├── ui/ # Shadcn components
@@ -23,7 +23,7 @@ The project is organized as follows:
             ├── hooks/ # hooks folders
             ├── actions/ # server actions
             ├── (pages)/ # Pages routes
-        ├── core/ # Core business logic and domain entities 
+        ├── core/ # Core application
             ├── application/
                 ├── controllers/ # entry point that bridges front/external call to core business application
                 ├── interfaces/
@@ -60,4 +60,4 @@ Run build
 
 I'm Next.js developper enthousiast, I like to share litle things i know about React and Next.js.
 
-Keep in touch with me: [Mail](mailto:contact@riv0manana.dev), [LinkedIn](https://www.linkedin.com/in/riv0manana/), [Website](https://www.linkedin.com/in/riv0manana/)
+Keep in touch with me: [Mail](mailto:contact@riv0manana.dev), [LinkedIn](https://www.linkedin.com/in/riv0manana/), [Website](https://riv0manana.dev)
