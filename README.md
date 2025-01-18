@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Clean Architecture Setup
 
-## Getting Started
+A template for those who want to start with Clean architecture and Atomic Design setup with Next.js. 
 
-First, run the development server:
+### PS: Clean Architecture isn't about folder structure, learn and adopt only if you're familiar with the concept
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Folder Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project is organized as follows:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+    project-folder/
+        ├── .github/ 
+            └── workflows/ # GitHub Actions workflows for CI/CD 
+        ├── app/ # Application-specific components and pages 
+            ├── api/ # API routes (exposed only for external needs (Webhook, Auth, etc))
+            ├── components/ # react components folders {PS: Check CDD & Atomic Design}
+                ├── ui/ # Shadcn components
+                ├── atoms/
+                ├── molecules/
+                ├── organism/
+                ├── templates/
+                ├── connected/ # components wrapper that inject services action call.
+            ├── hooks/ # hooks folders
+            ├── actions/ # server actions
+            ├── (pages)/ # Pages routes
+        ├── core/ # Core business logic and domain entities 
+            ├── application/
+                ├── controllers/ # entry point that bridges front/external call to core business application
+                ├── interfaces/
+                    ├── repository/ # repository definitions
+                    ├── service/ # service definitions
+                ├── use-cases/ # domain use cases (PS: check BDD & DDD)
+            ├── domain/ # entities model
+            ├── infra/ # implementation details
+                ├── repositories # repository implementation
+                ├── services # service implementation
+            ├── di # Dependencies injections handler
+                ├── modules/ 
+                ├── container.ts # dependencie container
+                ├── di.type.ts # type definition for module
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
+Run test:
 
-## Learn More
+    npm run test:run
 
-To learn more about Next.js, take a look at the following resources:
+Run test coverage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    npm run test:coverage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Run the app developement
 
-## Deploy on Vercel
+    npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Run build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    npm run build
+
+## About me
+
+I'm Next.js developper enthousiast, I like to share litle things i know about React and Next.js.
+
+Keep in touch with me: [Mail](mailto:contact@riv0manana.dev), [LinkedIn](https://www.linkedin.com/in/riv0manana/), [Website](https://www.linkedin.com/in/riv0manana/)

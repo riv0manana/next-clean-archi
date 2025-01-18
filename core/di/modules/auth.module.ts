@@ -19,7 +19,7 @@ export function createAuthModule() {
     authModule
         .bind(SYMBOLS.UserUseCase)
         .toClass(UserUseCase, [
-            SYMBOLS.IUserRepository,
+            SYMBOLS.IUserRepository, // change it to your implementation in infra
             SYMBOLS.IAuthService
         ])
 
@@ -27,6 +27,10 @@ export function createAuthModule() {
         authModule
             .bind(SYMBOLS.IAuthService)
             .toClass(AuthServiceMock, [SYMBOLS.IUserRepository])
+    } else {
+        authModule
+            .bind(SYMBOLS.IAuthService)
+            .toClass(AuthServiceMock, [SYMBOLS.IUserRepository]) // change it to your implementation in infra
     }
 
     return authModule
